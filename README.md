@@ -1,6 +1,6 @@
 <h2 align="center"> Windows 10 LTSC first setup </h2> 
 
-<h3 align="center"> A checklist for a complete first time windows ameliorated setup </h3>
+<h3 align="center"> A checklist for a complete first time windows LTSC setup </h3>
 
 <p align="center">
 <img src="https://img.shields.io/badge/Support-Windows%20x64-blue?logo=Windows&style=flat-square">
@@ -8,11 +8,9 @@
 </p>
 
 Windows 10 Enterprise LTSC
-Final image file size is 4.8 GiB.
+Final image file size on flash drive is 4.8 GiB.
 
 ##### Table of Contents
-
-
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
@@ -29,6 +27,7 @@ Disable windows update in Registry
 * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc //value name is value Start=4
 
 ### Services
+CMD: REGEDIT > HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
 * [Fax] Fax - Enables you to send and receive faxes, utilizing fax resources available on this computer or on the network
 * [MapsBroker] Downloaded Maps Manager - application access to downloaded maps
 * [CscService] Offline Files - performs maintenance activities on the Offline Files cache
@@ -81,6 +80,25 @@ Abbreviations:
 * [7-zip with Zstandard](https://github.com/mcmilk/7-Zip-zstd/releases/latest) - file archiver with additional functions (eg. hash verification)
 * [VLC](https://www.videolan.org/vlc/download-windows.html) (FOSS) - multimedia player and framework
 
+### Browsers
+* [Ungoogled Chromium v101](https://github.com/Nifury/ungoogled-chromium-binaries/releases/download/101.0.4951.64/ungoogled-chromium_101.0.4951.64-1.1_installer_x64.exe/) (FOSS) - chromium browser without Google's libraries, based on the Chromium engine [versions 100.0.4896.60 / 199.0.4844.82-1]
+  * as per: https://avoidthehack.com/manually-install-extensions-ungoogled-chromium#1downloadchromiumwebstore
+  * download https://github.com/NeverDecaf/chromium-web-store/releases
+  * change chrome://flags/#extension-mime-request-handling to "Always prompt for ins"
+  * change chrome://extensions to enable Developer mode
+  * drag the downloaded chromium webstore, install addons as per usual
+* [Vivaldi](https://vivaldi.com/download/) (Freeware) - customisable browser, based on the Chromium engine
+* [Firefox](https://www.mozilla.org/en-US/firefox/all/#product-desktop-esr) (Freeware) - customisable browser, not based on chromium
+
+#### Browser extensions
+* [UBlock Origin](https://github.com/gorhill/uBlock) (FOSS) - An efficient (ad) blocker for Chromium and Firefox
+* [HTTPS Everywhere](https://www.eff.org/https-everywhere/) (FOSS) - encrypts your communications with many major websites
+* [ClearUrls](https://gitlab.com/KevinRoebert/ClearUrls) (FOSS) - based on the new WebExtensions technology, automatically removes tracking elements from URLs
+
+## Intel drivers
+* [Intel's bluetooth driver](https://www.intel.com/content/www/us/en/support/articles/000005489/wireless/intel-wireless-products.html) (Freeware) - a bluetooth driver that works
+* [Intel's gpu driver](https://www.intel.com/content/www/us/en/support/products/80939/graphics.html) (Freeware) - For the specific gpu line
+
 ## Security / Peer clients
 * [QBitTorrent](https://www.qbittorrent.org/download.php) - a bittorrent client
 * [SimpleDNSCrypt](https://simplednscrypt.org/) - management tool for configuring the dnscrypt-proxy service (introduces latency)
@@ -109,21 +127,17 @@ Abbreviations:
 * [Telegram](https://desktop.telegram.org/) (Shareware) - unsecure chat app with phone contact synchronisation
 * [Discord](https://discord.com/download) (Shareware) - unsecure chat app with chat rooms
 * [Steam](https://store.steampowered.com/about/) (Shareware) - unsecure app
-## Programming
-
-
-
-
-
-
-
-
 
 ### File Explorer
-* Go to the Last Active window with a single click 
+* Go to the Last Active window with a single click / Switch to last opened window
 > Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
 > Right-click on Advanced> New> DWORD (32-bit) Value. Rename it to LastActiveClick
 > Double click on LastActiveClick and change its value to 1
+======
+> HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+> Advanced entry is selected, right-click on the white space in the right panel and select New > DWORD (32-bit) Value.
+> LastActiveClick = 1
+
 
 * Disable the LockScreen (Optional)
 > Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows
@@ -147,10 +161,7 @@ Abbreviations:
 * Apps in the context menu [GeekFlare](https://geekflare.com/windows-11-registry-tweak/)
 > HKEY_CLASSES_ROOT\Directory\Background\shell
 
-* Switch to last opened window
-> HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
-> Advanced entry is selected, right-click on the white space in the right panel and select New > DWORD (32-bit) Value.
-> LastActiveClick = 1
+
 
 * Windows search: [askVG](https://www.askvg.com/collection-of-registry-tweaks-for-windows-7/)
 > HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
@@ -233,29 +244,11 @@ Start Menu > Services > Windows Update > Disable the following:
 * Microsoft Account Sign-in Assistant (wlidsvc)
 * Windows Update (wuauserv)
 
-
 * LGHUB Updater Service (LGHUBUpdaterService)
-## Bios Configs
-* Fixed ram speed / XMP
-* TBD
-
-## Browsers
-* [Ungoogled Chromium](https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/windows/64bit/) (FOSS) - chromium browser without Google's libraries, based on the Chromium engine [versions 100.0.4896.60 / 199.0.4844.82-1]
-  * as per: https://avoidthehack.com/manually-install-extensions-ungoogled-chromium#1downloadchromiumwebstore
-  * download https://github.com/NeverDecaf/chromium-web-store/releases
-  * change chrome://flags/#extension-mime-request-handling to "Always prompt for ins"
-  * change chrome://extensions to enable Developer mode
-  * drag the downloaded chromium webstore, install addons as per usual
-* [Vivaldi](https://vivaldi.com/download/) (Freeware) - customisable browser, based on the Chromium engine
 
 ### Optional
 * [Chrome](https://www.google.com/chrome/) (Freeware) - made by Google, based on the Chromium engine
 * [Tor](https://www.torproject.org/download/) (FOSS) - browser focused on anonymity and security, based on firefox
-
-### Browser extensions
-* [UBlock Origin](https://github.com/gorhill/uBlock) (FOSS) - An efficient (ad) blocker for Chromium and Firefox
-* [HTTPS Everywhere](https://www.eff.org/https-everywhere/) (FOSS) - encrypts your communications with many major websites
-* [ClearUrls](https://gitlab.com/KevinRoebert/ClearUrls) (FOSS) - based on the new WebExtensions technology, automatically removes tracking elements from URLs
 
 ## Utilities
 * [PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/) (Microsoft) - Usefull windows tools
@@ -273,7 +266,6 @@ Start Menu > Services > Windows Update > Disable the following:
 
 ## Optional expansion hardware apps
 * [Logitech G-Hub](https://www.logitechg.com/en-us/innovation/g-hub.html) (Freeware) - propriatery Logitech software for peripherals
-* [Intel's bluetooth driver](https://www.intel.com/content/www/us/en/support/articles/000005489/wireless/intel-wireless-products.html) - a bluetooth driver
 * [Thunderbird](https://www.thunderbird.net/en-US/download/) - an E-Mail client
 
 ### Optional
