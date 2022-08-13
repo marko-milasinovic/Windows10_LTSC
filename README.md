@@ -5,9 +5,8 @@
 </p>
 
 <h3 align="center"> A checklist for a complete first time setup </h3>
-
 OS: Windows 10 Enterprise LTSC
-</d>
+
 USB drive: Final image file size on flash drive is 4.8 GiB.
 
 ##### Table of Contents
