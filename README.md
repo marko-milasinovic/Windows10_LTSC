@@ -11,6 +11,26 @@ Windows 10 Enterprise LTSC
 Final image file size on flash drive is 4.8 GiB.
 
 ##### Table of Contents
+ * [Windows system alterations](#windows-system-alterations)
+   + [Registry](#registry)
+   + [Services](#services)
+   + [Group policy](#group-policy)
+   + [Firewall changes](#firewall-changes)
+   + [Turn Windows Features on or off](#turn-windows-features-on-or-off)
+ * [Task Scheduler](#task-scheduler)
+- [Program list](#program-list)
+ * [DefaultApplications](#defaultapplications)
+   + [Browsers](#browsers)
+     - [Browser extensions](#browser-extensions)
+ * [Intel drivers](#intel-drivers)
+ * [Security / Peer clients](#security---peer-clients)
+ * [Programming](#programming)
+ * [Utilities](#utilities)
+ * [Communication](#communication)
+   + [File Explorer](#file-explorer)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 
