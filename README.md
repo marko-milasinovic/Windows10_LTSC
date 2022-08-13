@@ -104,6 +104,7 @@ Abbreviations:
   * change chrome://flags/#extension-mime-request-handling to "Always prompt for ins"
   * change chrome://extensions to enable Developer mode
   * drag the downloaded chromium webstore, install addons as per usual
+  * Bookmarks C: Users /AppData /Local /Chromium /User Data /Default /Bookmarks
 * [Vivaldi](https://vivaldi.com/download/) (Freeware) - customisable browser, based on the Chromium engine
 * [Firefox](https://www.mozilla.org/en-US/firefox/all/#product-desktop-esr) (Freeware) - customisable browser, not based on chromium
 
@@ -150,6 +151,21 @@ Abbreviations:
 > Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
 > Right-click on Advanced> New> DWORD (32-bit) Value. Rename it to LastActiveClick
 > Double click on LastActiveClick and change its value to 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ======
 > HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
 > Advanced entry is selected, right-click on the white space in the right panel and select New > DWORD (32-bit) Value.
@@ -177,6 +193,16 @@ Abbreviations:
 
 * Apps in the context menu [GeekFlare](https://geekflare.com/windows-11-registry-tweak/)
 > HKEY_CLASSES_ROOT\Directory\Background\shell
+
+
+
+
+
+
+
+
+
+
 
 
 
