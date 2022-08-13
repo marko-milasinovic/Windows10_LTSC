@@ -31,9 +31,6 @@ Final image file size on flash drive is 4.8 GiB.
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-
 ## Windows system alterations
 * [Custom HOST file](https://github.com/StevenBlack/hosts#readme) - Can be found in: *Windows: %SystemRoot%\system32\drivers\etc\hosts* (due to lag only ~16k entries)
 * Start > Edit Power Plan > Select High performance > Change plan settings > Change advanced power settings > Processor power management > Maximum processor state: 99%
