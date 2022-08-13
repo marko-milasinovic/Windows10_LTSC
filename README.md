@@ -1,14 +1,13 @@
 <h2 align="center"> Windows 10 LTSC first setup </h2> 
-
-<h3 align="center"> A checklist for a complete first time windows LTSC setup </h3>
-
 <p align="center">
 <img src="https://img.shields.io/badge/Support-Windows%20x64-blue?logo=Windows&style=flat-square">
 <img src="https://img.shields.io/github/license/marko-milasinovic/Windows10_LTSC?style=flat-square">
 </p>
 
-Windows 10 Enterprise LTSC
-Final image file size on flash drive is 4.8 GiB.
+<h3 align="center"> A checklist for a complete first time setup </h3>
+
+OS: Windows 10 Enterprise LTSC
+USB drive: Final image file size on flash drive is 4.8 GiB.
 
 ##### Table of Contents
  * [Windows system alterations](#windows-system-alterations)
