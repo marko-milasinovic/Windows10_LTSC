@@ -40,10 +40,15 @@ USB drive with at least 8GiB, final image file size on flash drive is ~4.8 GiB.
 * View Advanced System Settings > Performance: Settings > Visual Effects > Select: Show windows content while dragging, Smooth edges of screen fonts
   * Advanced > Automatically manage=DISABLE > Page file size: Initial=1024, Maximum=8192
 * regedit change for auto login functionality ??
+* Automatically hide scroll bars in windows -> Uncheck
 
 ### Registry
-Disable windows update in Registry
-* HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc //value name is value Start=4
+Disable windows update in Registry (Set "start"=4)
+* HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc
+* HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\windefend
+* HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisDrv ??
+* HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisSvc ??
+* HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\msmpeng ?
 
 ### Services
 CMD: REGEDIT > HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
@@ -53,8 +58,11 @@ CMD: REGEDIT > HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
 * [PhoneSvc] Phone Service - Manages the telephony
 * [RetailDemo] Retail Demo Service
 * [wisvc] Windows Insider Service - infrastructure support for the Windows Insider Program
+* [SmsRouter] Microsoft Windows SMS Router Service
 
 ### Group policy
+Search > Edit group policy
+(admx GP wiki)[https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.ControlPanel::ForceClassicControlPanel]
 Computer Configuration > Administrative Templates > All Settings:
 * Weather = DISABLED
 * Configure Automatic Updates = DISABLED
@@ -62,6 +70,16 @@ Computer Configuration > Administrative Templates > All Settings:
 
 ### Firewall changes
 Run BlockAll.bat as administrator in the /MicrosoftOffice folder to stop it from updating
+
+Search > Windows Defender Firewall > Advanced Settings > 
+Disable firewall rule for:
+* Work or shool account
+* Wi-FI Direct network discovery
+* Wi-FI Direct Scan
+* Wi-FI Direct Spooler
+* Microsoft Lync (Inbound)
+* Microsoft Lync UcMapi (Inbound)
+* Microsoft family features (outbound)
 
 ### Turn Windows Features on or off
 Disable the following:
