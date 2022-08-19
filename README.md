@@ -56,11 +56,19 @@ Disable windows update in Registry (Set "start"=4)
 CMD: REGEDIT > HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
 * [Fax] Fax - Enables you to send and receive faxes, utilizing fax resources available on this computer or on the network
 * [MapsBroker] Downloaded Maps Manager - application access to downloaded maps
+* [DiagTrack] Connected User Experiences and Telemetry
 * [CscService] Offline Files - performs maintenance activities on the Offline Files cache
 * [PhoneSvc] Phone Service - Manages the telephony
 * [RetailDemo] Retail Demo Service
 * [wisvc] Windows Insider Service - infrastructure support for the Windows Insider Program
 * [SmsRouter] Microsoft Windows SMS Router Service
+* [XboxGipSvc] Xbox Accessory Management Service
+* [XblAuthManager] Xbox Live Auth Manager
+* [XboxNetApiSvc] Xbox Live Networking Service
+* [XblGameSave] Xbox Live Game Save
+* [lfsvc] Geolocation Service
+* [irmon] Infrared monitor service
+
 
 ### Group policy
 Search > Edit group policy
@@ -157,6 +165,7 @@ Abbreviations:
 ## Utilities
 * [DeepL](https://appdownload.deepl.com/windows/0install/DeepLSetup.exe) (Freeware) - Auto translate tool
 * [Freeplane](https://github.com/freeplane/freeplane/releases) (FOSS) - Tools for mind mapping
+* [PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/install) (Microsoft) - Usefull windows tools
 * [HWmonitor](https://www.cpuid.com/softwares/hwmonitor.html) (Shareware) - general purpose hardware monitoring program
 * [ffmpeg](https://ffmpeg.org/download.html) (FOSS) - command line multimedia framework (a complete, cross-platform solution to record, convert and stream audio and video)
   * ```
@@ -244,10 +253,6 @@ Abbreviations:
  sc config wuauserv start= disabled
  ```
 Start Menu > Services > Windows Update > Disable the following:
-* Xbox Live Networking Service (XboxNetApiSvc)
-* Xbox Accessory Management Service (XboxGipSvc)
-* Xbox Live Game Save (XblGameSave)
-* Xbox Live Auth Manager (XblAuthManager)
 * autotimesvc
 * DiagTrack
 * dmwappushservice
@@ -315,9 +320,6 @@ Start Menu > Services > Windows Update > Disable the following:
 ### Optional
 * [Chrome](https://www.google.com/chrome/) (Freeware) - made by Google, based on the Chromium engine
 * [Tor](https://www.torproject.org/download/) (FOSS) - browser focused on anonymity and security, based on firefox
-
-## Utilities
-* [PowerToys](https://docs.microsoft.com/en-us/windows/powertoys/) (Microsoft) - Usefull windows tools
 
 ### Optional
 * [Crystalmark](https://crystalmark.info/en/download/) (FOSS) - benchmark software that measures the transfer speed of media data storage
