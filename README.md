@@ -362,6 +362,7 @@ Start Menu > Services > Windows Update > Disable the following:
 
 ### Optional
 * [Paint.net](https://www.getpaint.net/doc/latest/InstallPDN.html) (Freeware) - raster graphics editor, developed on the.NET Framework
+* [Greenshot](https://getgreenshot.org/downloads) (FOSS) - screenshot tool
 
 ### Optional
 * [Handbrake](https://handbrake.fr/downloads.php) (FOSS) - video transcoder
