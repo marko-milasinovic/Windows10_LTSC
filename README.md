@@ -153,6 +153,7 @@ Abbreviations:
 * [Eclipse](https://www.eclipse.org/downloads/packages/release) - oxygen release?
   
 ## Utilities
+* [DeepL](https://appdownload.deepl.com/windows/0install/DeepLSetup.exe) (Freeware) - Auto translate tool
 * [Freeplane](https://github.com/freeplane/freeplane/releases) (FOSS) - Tools for mind mapping
 * [HWmonitor](https://www.cpuid.com/softwares/hwmonitor.html) (Shareware) - general purpose hardware monitoring program
 * [ffmpeg](https://ffmpeg.org/download.html) (FOSS) - command line multimedia framework (a complete, cross-platform solution to record, convert and stream audio and video)
