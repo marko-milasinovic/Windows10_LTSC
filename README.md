@@ -55,21 +55,50 @@ Disable windows update in Registry (Set "start"=4)
 
 ### Services
 CMD: REGEDIT > HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
+* [WpcMonSvc] Parental Controls
 * [Fax] Fax - Enables you to send and receive faxes, utilizing fax resources available on this computer or on the network
-* [MapsBroker] Downloaded Maps Manager - application access to downloaded maps
-* [DiagTrack] Connected User Experiences and Telemetry
-* [CscService] Offline Files - performs maintenance activities on the Offline Files cache
-* [PhoneSvc] Phone Service - Manages the telephony
-* [RetailDemo] Retail Demo Service
 * [wisvc] Windows Insider Service - infrastructure support for the Windows Insider Program
-* [SmsRouter] Microsoft Windows SMS Router Service
+* [RetailDemo] Retail Demo Service
+* [DiagTrack] Connected User Experiences and Telemetry
 * [XboxGipSvc] Xbox Accessory Management Service
 * [XblAuthManager] Xbox Live Auth Manager
 * [XboxNetApiSvc] Xbox Live Networking Service
 * [XblGameSave] Xbox Live Game Save
-* [lfsvc] Geolocation Service
-* [irmon] Infrared monitor service
 
+Maps / geolocation are disabled
+* [MapsBroker] Downloaded Maps Manager - application access to downloaded maps
+* [lfsvc] Geolocation Service
+
+Offline files / file backups are disabled
+* [CscService] Offline Files - performs maintenance activities on the Offline Files cache
+* [fhsvc] File History Service
+* [smphost] Microsoft Storage Spaces SMP
+* [BDESVC] BitLocker Drive Encryption Service
+
+Phone services
+* [PhoneSvc] Phone Service - Manages the telephony
+* [SmsRouter] Microsoft Windows SMS Router Service
+* [icssvc] Windows Mobile Hotspot Service
+* [irmon] Infrared monitor service
+* [RmSvc] Radio Management Service
+
+Ipv6 services:
+* [IpxlatCfgSvc] IP Translation Configuration Service (ipv6)
+* [iphlpsvc] IP Helper (ipv6)
+
+
+Windows Update & Co.
+* [InstallService] Microsoft Store Install Service
+* [PushToInstall] Windows PushToInstall Service
+
+Remote Access
+* [RemoteAccess] Routing and Remote Access
+* [RemoteRegistry] Remote Registry
+* [TermService] Remote Desktop Services
+* [SessionEnv] Remote Desktop Configuration
+
+WiFi services:
+* [WFDSConMgrSvc] Wi-Fi Direct Services Connection Manager Service
 
 ### Group policy
 Search > Edit group policy
