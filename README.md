@@ -62,7 +62,7 @@ Usefull [wiki](http://revertservice.com/10/) website for W10 service documentati
 Run the following commands in Command Prompt (as an administrator):
 
 ```
-sc config XboxGipSvc start= disabled && sc config xboxgip start= disabled && sc config xbgm start=disabled && sc config XblAuthManager start= disabled && sc config XblGameSave start=disabled 
+sc config XboxGipSvc start= disabled & sc config xboxgip start= disabled & sc config xbgm start=disabled & sc config XblAuthManager start= disabled & sc config XblGameSave start=disabled 
 ```
    
 * [WpcMonSvc] Parental Controls
