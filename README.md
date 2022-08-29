@@ -54,6 +54,7 @@ Disable windows update in Registry (Set "start"=4)
 * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\msmpeng ?
 
 ### Services
+Usefull [wiki](http://revertservice.com/10/) website for W10 service documentation
 CMD: REGEDIT > HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
 * [WpcMonSvc] Parental Controls
 * [Fax] Fax - Enables you to send and receive faxes, utilizing fax resources available on this computer or on the network
@@ -68,6 +69,7 @@ CMD: REGEDIT > HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
 Maps / geolocation are disabled
 * [MapsBroker] Downloaded Maps Manager - application access to downloaded maps
 * [lfsvc] Geolocation Service
+* [SharedRealitySvc] Spatial Data Service
 
 Offline files / file backups are disabled
 * [CscService] Offline Files - performs maintenance activities on the Offline Files cache
