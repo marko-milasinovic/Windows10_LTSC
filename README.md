@@ -63,10 +63,9 @@ Run the following commands in Command Prompt (as an administrator):
 
 ```
 sc config XboxGipSvc start= disabled & sc config xboxgip start= disabled & sc config xbgm start=disabled & sc config XblAuthManager start= disabled & sc config XblGameSave start=disabled & sc config workfolderssvc start= disabled & sc config wuauserv start= disabled & sc config WinRM start= disabled & sc config icssvc start= disabled & sc config WMPNetworkSvc start= disabled & sc config wisvc start= disabled & sc config SharedRealitySvc start= disabled & sc config RetailDemo start= disabled & sc config RetailDemo start= disabled & sc config RemoteAccess start= disabled & sc config shpamsvc start= disabled
-
-
 ```
 <p>
+
 ```
 sc config WFDSConMgrSvc start= disabled & sc config WFDSConMgrSvc start= disabled
 ```
