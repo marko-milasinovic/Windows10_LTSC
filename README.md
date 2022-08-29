@@ -46,9 +46,11 @@ USB drive with at least 8GiB, final image file size on flash drive is ~4.8 GiB.
 Disable windows update in Registry (Set "start"=4)
 <p>
 Run > 
+
 ```
 REGEDIT
 ```
+
 * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc
 * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Wuaserv
 * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UsoSvc
