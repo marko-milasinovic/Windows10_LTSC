@@ -55,6 +55,7 @@ Disable windows update in Registry (Set "start"=4)
 
 ### Services
 Usefull [wiki](http://revertservice.com/10/) website for W10 service documentation
+<p>
 CMD: REGEDIT > HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
 * [WpcMonSvc] Parental Controls
 * [Fax] Fax - Enables you to send and receive faxes, utilizing fax resources available on this computer or on the network
