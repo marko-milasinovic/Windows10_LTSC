@@ -44,6 +44,8 @@ USB drive with at least 8GiB, final image file size on flash drive is ~4.8 GiB.
 
 ### Registry
 Disable windows update in Registry (Set "start"=4)
+<p>
+Run > ```REGEDIT```
 * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc
 * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Wuaserv
 * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\UsoSvc
@@ -56,7 +58,9 @@ Disable windows update in Registry (Set "start"=4)
 ### Services
 Usefull [wiki](http://revertservice.com/10/) website for W10 service documentation
 <p>
-CMD: REGEDIT > HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services
+Run the following commands in Command Prompt (as an administrator):
+``` sc config XboxGipSvc start= disabled && sc config xboxgip start= disabled && sc config xbgm start=disabled && sc config XblAuthManager start= disabled && sc config XblGameSave start=disabled ```
+   
 * [WpcMonSvc] Parental Controls
 * [Fax] Fax - Enables you to send and receive faxes, utilizing fax resources available on this computer or on the network
 * [wisvc] Windows Insider Service - infrastructure support for the Windows Insider Program
