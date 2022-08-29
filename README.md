@@ -45,11 +45,7 @@ USB drive with at least 8GiB, final image file size on flash drive is ~4.8 GiB.
 ### Registry
 Disable windows update in Registry (Set "start"=4)
 <p>
-Run > 
-
-```
-REGEDIT
-```
+Run > <strong>REGEDIT</strong>
 
 * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WaaSMedicSvc
 * HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Wuaserv
@@ -64,6 +60,7 @@ REGEDIT
 Usefull [wiki](http://revertservice.com/10/) website for W10 service documentation
 <p>
 Run the following commands in Command Prompt (as an administrator):
+
 ```
 sc config XboxGipSvc start= disabled && sc config xboxgip start= disabled && sc config xbgm start=disabled && sc config XblAuthManager start= disabled && sc config XblGameSave start=disabled 
 ```
