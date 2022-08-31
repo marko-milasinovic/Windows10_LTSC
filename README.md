@@ -12,6 +12,11 @@ OS: Windows 10 Enterprise LTSC image
 
 USB drive with at least 8GiB, final image file size on flash drive is ~4.8 GiB.
 
+## Windows administrator account activation
+```
+net user administrator /active:yes
+```
+
 ##### Table of Contents
  * [Windows system alterations](#windows-system-alterations)
    + [Registry](#registry)
