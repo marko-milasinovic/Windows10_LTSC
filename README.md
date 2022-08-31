@@ -157,8 +157,8 @@ Abbreviations:
   * ```
     Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
     ```
-* [MPV - github](https://github.com/mpv-player/mpv) (FOSS) - optimised and simple media player
-  * [MPV - chocolatey](https://community.chocolatey.org/packages/mpv) 
+* [MPV - github](https://github.com/mpv-player/mpv) (FOSS) - optimised and simple media player | [Manual / wiki](https://mpv.io/manual/stable/#keyboard-control)
+  * [MPV - chocolatey](https://community.chocolatey.org/packages/mpv)
   * ```
     choco install mpv
     ```
