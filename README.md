@@ -12,25 +12,40 @@
 2) USB drive with at least 8GiB, final image file size on flash drive is ~4.8 GiB.
 
 ### Table of Contents
- * [Windows system alterations](#windows-system-alterations)
-   + [Registry](#registry)
-   + [Services](#services)
-   + [Group policy](#group-policy)
-   + [Firewall changes](#firewall-changes)
-   + [Turn Windows Features on or off](#turn-windows-features-on-or-off)
- * [Task Scheduler](#task-scheduler)
+- [Requirements](#requirements)
+- [Preparation](#preparation)
+  * [Windows system alterations](#windows-system-alterations)
+    + [Registry](#registry)
+    + [Services](#services)
+    + [Disable Windows Updates](#disable-windows-updates)
+    + [Services to be disabled](#services-to-be-disabled)
+    + [Group policy](#group-policy)
+      - [Change GP settings to the following:](#change-gp-settings-to-the-following-)
+    + [Firewall changes](#firewall-changes)
+    + [Windows Firewall](#windows-firewall)
+    + [Windows features](#windows-features)
+  * [Task Scheduler](#task-scheduler)
 - [Program list](#program-list)
- * [DefaultApplications](#defaultapplications)
-   + [Browsers](#browsers)
-     - [Browser extensions](#browser-extensions)
- * [Intel drivers](#intel-drivers)
- * [Security / Peer clients](#security---peer-clients)
- * [Programming](#programming)
- * [Utilities](#utilities)
- * [Communication](#communication)
-   + [File Explorer](#file-explorer)
+  * [DefaultApplications](#defaultapplications)
+    + [Browsers](#browsers)
+      - [Browser extensions](#browser-extensions)
+  * [Intel drivers](#intel-drivers)
+  * [Security / Peer clients](#security---peer-clients)
+  * [Programming](#programming)
+  * [Utilities](#utilities)
+  * [Communication](#communication)
+    + [File Explorer](#file-explorer)
+    + [Windows services (old)](#windows-services--old-)
+    + [Optional](#optional)
+    + [Optional](#optional-1)
+  * [Optional expansion hardware apps](#optional-expansion-hardware-apps)
+    + [Optional](#optional-2)
+    + [Optional](#optional-3)
+  * [Optional Image manipulation](#optional-image-manipulation)
+    + [Optional video software](#optional-video-software)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 # Preparation
 1) **Unplug the ethernet** cable before installing windows
@@ -166,8 +181,10 @@ WiFi services:
 ```
 Edit group policy
 ```
-Start > Edit group policy > Make the following changes:
-**User Configuration** > Administrative Templates > All Settings:
+#### Change GP settings to the following:
+
+Start > Edit group policy > **User Configuration** > Administrative Templates > All Settings:
+
 * Always open All Control Panel Items when opening Control Panel = ENABLED
 * Windows Automatic Updates = ENABLED
 * Do not search Internet = ENABLED
@@ -229,8 +246,9 @@ Copy **BlockAll.bat** to the following folder:
 ```
 C:\Program Files\Microsoft Office\
 ```
-* Run **BlockAll.bat** as administrator in the **/MicrosoftOffice** folder (to stop it from updating)
+* Run **BlockAll.bat** as administrator in the **\MicrosoftOffice** folder (to stop it from updating)
 
+### Windows Firewall
 ```
 Windows Defender Firewall with Advanced Security
 ```
@@ -243,10 +261,13 @@ Start > Windows Defender Firewall with Advanced Security > **Disable firewall ru
 * Microsoft Lync UcMapi (Inbound)
 * Microsoft family features (outbound)
 
-### Turn Windows Features on or off
+### Windows features
+
+```
+Turn Windows features on or off
+```
 Disable the following:
 * Internet Explorer 11
-* Media Features
 
 ## Task Scheduler
 
@@ -255,34 +276,37 @@ Task Scheduler
 ```
 Start > Task Scheduler > Task Scheduler Library:
 * **OneDrive Standalone Update Task** = DISABLED
-* Disable Edge
+* **Edge**  = DISABLED
 * Microsoft > **XblGameSaveTask** = DISABLED
-* Office > **OfficeTelemetryAgentLogOn** = DISABLED
-* Office > **OfficeTelemetryAgentFallBack** = DISABLED
-* Office > **OfficeFeatureUpdates** = DISABLED
-* Office > **OfficeFeatureUpdatesLogOn** = DISABLED
-* Office > **OfficeAutomaticUpdates** = DISABLED
-* Office > **OfficeClickToRunServiceMonitor** = DISABLED
+* Microsoft > Office:
+	* **OfficeTelemetryAgentLogOn** = DISABLED
+	* **OfficeTelemetryAgentFallBack** = DISABLED
+	* **OfficeFeatureUpdates** = DISABLED
+	* **OfficeFeatureUpdatesLogOn** = DISABLED
+	* **OfficeAutomaticUpdates** = DISABLED
+	* **OfficeClickToRunServiceMonitor** = DISABLED
 
 # Program list
 Abbreviations: 
-* FOSS - Free and Open-Source Software
-* Freeware - software, most often proprietary, that is distributed at no monetary cost to the end user
-* Shareware - proprietary software which has trial use at little or no cost with usually limited functionality, but which can be upgraded upon payment
+* **FOSS** - Free and Open-Source Software
+* **Freeware** - software, most often proprietary, that is distributed at no monetary cost to the end user
+* **Shareware** - proprietary software which has trial use at little or no cost with usually limited functionality, but which can be upgraded upon payment
 
 ## DefaultApplications
-* [Chocolatey](https://chocolatey.org/install) (FOSS) - software management solution
-  * ```
-    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-    ```
+
+ ```
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+* [Chocolatey](https://chocolatey.org/install) (FOSS) - Software management solution
+
+```
+choco install mpv
+```
 * [MPV - github](https://github.com/mpv-player/mpv) (FOSS) - optimised and simple media player | [Manual / wiki](https://mpv.io/manual/stable/#keyboard-control)
   * [MPV - chocolatey](https://community.chocolatey.org/packages/mpv)
-  * ```
-    choco install mpv
-    ```
-* [Clementine](https://github.com/clementine-player/Clementine/releases/latest) (FOSS) - a "winamp" style music player
-* [Lightshot](https://app.prntscr.com/build/setup-lightshot.exe) (Freeware) - A screenshot tool, to use press "Prt Scr"
-* [Total Commander](https://www.ghisler.com/download.htm) (Shareware) - tried and true file manager
+
+* [Clementine](https://github.com/clementine-player/Clementine/releases/latest) (FOSS) - A "winamp" style music player
+* [GreenShot](https://getgreenshot.org/downloads/) (FOSS) - A screenshot tool
 * [Calibre](https://calibre-ebook.com/dist/win64) (FOSS) - Ebook viewer & manager
 * [qimgv](https://github.com/easymodo/qimgv/releases/latest) (FOSS) - Image viewer
 * [Inkscape](https://gitlab.com/inkscape/inkscape) (FOSS) - vector image editor
@@ -291,9 +315,8 @@ Abbreviations:
 * [Revo Uninstaller](https://www.revouninstaller.com/start-freeware-download/) (Shareware) - advanced program uninstaller
 * [7-zip with Zstandard](https://github.com/mcmilk/7-Zip-zstd/releases/latest) - file archiver with additional functions (eg. hash verification)
 * [VLC](https://www.videolan.org/vlc/download-windows.html) (FOSS) - multimedia player and framework
- 
 * [Adobe Reader](https://get.adobe.com/reader/download?os=Windows+10&name=Reader+DC+2022.002.20191+English+Windows%2864Bit%29&lang=en&nativeOs=Windows+10&accepted=&declined=mss%2Cmsc%2Ccr&preInstalled=&site=otherversions) (Freeware) - Propriatery pdf reader
- * Disable update service after install
+ * After installing disable the following: Start > Services > **Adobe Acrobat Update Service** = DISABLED
 
 ### Browsers
 * [Ungoogled Chromium v101](https://github.com/Nifury/ungoogled-chromium-binaries/releases/download/101.0.4951.64/ungoogled-chromium_101.0.4951.64-1.1_installer_x64.exe/) (FOSS) - chromium browser without Google's libraries, based on the Chromium engine [versions 100.0.4896.60 / 199.0.4844.82-1]
@@ -328,7 +351,7 @@ Abbreviations:
 * [IntelliJ Idea](https://www.jetbrains.com/idea/) - for Java, with assistance for a variety of other languages such as SQL, JPQL, HTML, JavaScript
 * [WebStorm](https://www.jetbrains.com/webstorm/) - for JavaScript and related technologies
 * [Visual Studio Code](https://github.com/VSCodium/vscodium/releases/latest) (FOSS) - JavaScript, TypeScript, Node.js (C++, C#, Java, Python, PHP, Go, .NET, Unity)
-* [Eclipse](https://www.eclipse.org/downloads/packages/release) - oxygen release?
+* [Eclipse](https://www.eclipse.org/downloads/packages/release) - oxygen release? - mainly for Java Integrated Development Environment
   
 ## Utilities
 * [DeepL](https://appdownload.deepl.com/windows/0install/DeepLSetup.exe) (Freeware) - Auto translate tool
@@ -340,7 +363,9 @@ Abbreviations:
     choco install ffmpeg
     ```
 * [MKVToolNix](https://mkvtoolnix.download/downloads.html#windows) (FOSS) - gui for working with Matroska files [gitlab](https://gitlab.com/mbunkus/mkvtoolnix)
-
+  * ```
+    choco install mkvtoolnix
+    ```
 ## Communication
 * [Telegram](https://desktop.telegram.org/) (Shareware) - unsecure chat app with phone contact synchronisation
 * [Discord](https://discord.com/download) (Shareware) - unsecure chat app with chat rooms
@@ -348,30 +373,14 @@ Abbreviations:
 
 ### File Explorer
 * Go to the Last Active window with a single click / Switch to last opened window
-> Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+
+Computer\HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
 > Right-click on Advanced> New> DWORD (32-bit) Value. Rename it to LastActiveClick
 > Double click on LastActiveClick and change its value to 1
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-======
-> HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
-> Advanced entry is selected, right-click on the white space in the right panel and select New > DWORD (32-bit) Value.
-> LastActiveClick = 1
-
-> HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace
 > HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace
 > add minus infront of -{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}
 
@@ -403,13 +412,6 @@ Abbreviations:
 
 
 
-
-
-
-
-
-
-
 * Windows search: [askVG](https://www.askvg.com/collection-of-registry-tweaks-for-windows-7/)
 > HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer
 > “LinkResolveIgnoreLinkInfo”=dword:00000001
@@ -417,7 +419,7 @@ Abbreviations:
 > “NoResolveTrack”=dword:00000001
 > “NoInternetOpenWith”=dword:00000001
 
-### Windows services
+### Windows services (old)
  ```
  net stop wuauserv 
  ```
@@ -502,7 +504,7 @@ Start Menu > Services > Windows Update > Disable the following:
 * [ImDIsk](https://www.ltr-data.se/opencode.html/#ImDisk) (FOSS) - virtual disk driver
 
 * [Arduino](https://www.arduino.cc/en/software) (FOSS) - Arduino Software IDE
-* [Eclipse](https://www.eclipse.org/downloads/packages/release/2021-06/r/eclipse-ide-enterprise-java-and-web-developers) - mainly for Java Integrated Development Environment
+* [Total Commander](https://www.ghisler.com/download.htm) (Shareware) - tried and true file manager
 
 ## Optional expansion hardware apps
 * [Logitech G-Hub](https://www.logitechg.com/en-us/innovation/g-hub.html) (Freeware) - propriatery Logitech software for peripherals
@@ -516,27 +518,25 @@ Start Menu > Services > Windows Update > Disable the following:
 * [XWiki](https://xwiki.com/en/offerings/products/xwiki-standard) (FOSS) - WebServer wiki
 * [OpenCRX](https://github.com/opencrx/opencrx) (FOSS) - Customer relationship management software
 
-## Image manipulation 
+## Optional Image manipulation 
+* [Paint.net](https://www.getpaint.net/doc/latest/InstallPDN.html) (Freeware) - raster graphics editor, developed on the.NET Framework
 
-### Optional
+### Optional video software
 * [Waifu2x Caffe](https://github.com/lltcggie/waifu2x-caffe/releases/latest) (FOSS) - image denoiser & upscaler (slow, best used with Nvidia GPU's)
   * [Intel OpenVino](https://docs.openvinotoolkit.org/latest/openvino_docs_install_guides_installing_openvino_windows.html) - speeds up Waifu2x Caffe
   * [Waifu2x Vulkan](https://github.com/nihui/waifu2x-ncnn-vulkan/) (FOSS) - image denoiser & upscaler (faster but less accurate)
 * [Waifu2x Extension GUI](https://github.com/AaronFeng753/Waifu2x-Extension-GUI/releases/latest) video & image denoiser & upscaler with multiple algorithms
-* [Dandere2x](https://github.com/akai-katto/dandere2x/releases/latest) - video denoiser & upscaler
 
-### Optional
-* [Paint.net](https://www.getpaint.net/doc/latest/InstallPDN.html) (Freeware) - raster graphics editor, developed on the.NET Framework
-* [Greenshot](https://getgreenshot.org/downloads) (FOSS) - screenshot tool
-
-### Optional
 * [Ruby - chocolatey](https://community.chocolatey.org/packages/ruby) 
-  * ```
-    choco install ruby
+	```
+	choco install ruby
+	```
+  * [Other Video Transcoding](https://github.com/donmelton/other_video_transcoding) (FOSS) - highly efficient transcoding cli for h.264 to h.265
+  	```
+    gem install other_video_transcoding
     ```
-  * [video_transcoding](https://github.com/donmelton/video_transcoding) (FOSS) - highly efficient transcoding cli for h.264
-  * [other_video_transcoding](https://github.com/donmelton/other_video_transcoding) (FOSS) - highly efficient transcoding cli for h.264 to h.265
-* [Dandere2x](https://github.com/akai-katto/dandere2x/releases/latest) (FOSS) - efficient video upscaler that uses waifu2x and video compression technology
+  
+* [Dandere 2x](https://github.com/akai-katto/dandere2x/releases/latest) (FOSS) - Efficient video upscaler that uses waifu2x and video compression technology
 
 
 <hr>
