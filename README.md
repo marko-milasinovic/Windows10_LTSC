@@ -12,40 +12,25 @@
 2) USB drive with at least 8GiB, final image file size on flash drive is ~4.8 GiB.
 
 ### Table of Contents
-- [Requirements](#requirements)
-- [Preparation](#preparation)
-  * [Windows system alterations](#windows-system-alterations)
-    + [Registry](#registry)
-    + [Services](#services)
-    + [Disable Windows Updates](#disable-windows-updates)
-    + [Services to be disabled](#services-to-be-disabled)
-    + [Group policy](#group-policy)
-      - [Change GP settings to the following:](#change-gp-settings-to-the-following-)
-    + [Firewall changes](#firewall-changes)
-    + [Windows Firewall](#windows-firewall)
-    + [Windows features](#windows-features)
-  * [Task Scheduler](#task-scheduler)
+ * [Windows system alterations](#windows-system-alterations)
+   + [Registry](#registry)
+   + [Services](#services)
+   + [Group policy](#group-policy)
+   + [Firewall changes](#firewall-changes)
+   + [Turn Windows Features on or off](#turn-windows-features-on-or-off)
+ * [Task Scheduler](#task-scheduler)
 - [Program list](#program-list)
-  * [DefaultApplications](#defaultapplications)
-    + [Browsers](#browsers)
-      - [Browser extensions](#browser-extensions)
-  * [Intel drivers](#intel-drivers)
-  * [Security / Peer clients](#security---peer-clients)
-  * [Programming](#programming)
-  * [Utilities](#utilities)
-  * [Communication](#communication)
-    + [File Explorer](#file-explorer)
-    + [Windows services (old)](#windows-services--old-)
-    + [Optional](#optional)
-    + [Optional](#optional-1)
-  * [Optional expansion hardware apps](#optional-expansion-hardware-apps)
-    + [Optional](#optional-2)
-    + [Optional](#optional-3)
-  * [Optional Image manipulation](#optional-image-manipulation)
-    + [Optional video software](#optional-video-software)
+ * [DefaultApplications](#defaultapplications)
+   + [Browsers](#browsers)
+     - [Browser extensions](#browser-extensions)
+ * [Intel drivers](#intel-drivers)
+ * [Security / Peer clients](#security---peer-clients)
+ * [Programming](#programming)
+ * [Utilities](#utilities)
+ * [Communication](#communication)
+   + [File Explorer](#file-explorer)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
 
 # Preparation
 1) **Unplug the ethernet** cable before installing windows
@@ -253,13 +238,23 @@ C:\Program Files\Microsoft Office\
 Windows Defender Firewall with Advanced Security
 ```
 Start > Windows Defender Firewall with Advanced Security > **Disable firewall rule** for the following:
+
+**Inbound**: 
+* Cortana
 * Work or shool account
+* Microsoft Lync
+* Microsoft Lync UcMapi
+
+**Outbound**:
+* Microsoft Content
+* Microsoft family features
+* Narrator Quick Start
+* Cortana
+* Work or shool account
+* Xbox Game UI
 * Wi-FI Direct network discovery
 * Wi-FI Direct Scan
 * Wi-FI Direct Spooler
-* Microsoft Lync (Inbound)
-* Microsoft Lync UcMapi (Inbound)
-* Microsoft family features (outbound)
 
 ### Windows features
 
