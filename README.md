@@ -5,6 +5,7 @@
 <p align="center">
 <img src="https://img.shields.io/badge/Support-Windows%20x64-blue?logo=Windows&style=flat-square">
 <img src="https://img.shields.io/github/license/marko-milasinovic/Windows10_LTSC?style=flat-square">
+<img src="https://img.shields.io/github/directory-file-count/marko-milasinovic/Windows10_LTSC?style=flat-square">
 </p>
 
 # Requirements
