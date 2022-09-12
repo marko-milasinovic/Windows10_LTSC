@@ -8,16 +8,10 @@
 </p>
 
 # Requirements
-OS: Windows 10 Enterprise LTSC image
+1) Windows 10 Enterprise LTSC image
+2) USB drive with at least 8GiB, final image file size on flash drive is ~4.8 GiB.
 
-USB drive with at least 8GiB, final image file size on flash drive is ~4.8 GiB.
-
-## Windows administrator account activation
-```
-net user administrator /active:yes
-```
-
-##### Table of Contents
+### Table of Contents
  * [Windows system alterations](#windows-system-alterations)
    + [Registry](#registry)
    + [Services](#services)
@@ -38,14 +32,40 @@ net user administrator /active:yes
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
+# Preparation
+1) **Unplug the ethernet** cable before installing windows
+2) **Enable** default **Windows administrator** account and log in as administrator
+```
+net user administrator /active:yes
+```
+3) **Unzip** the provided **SystemFolders.7zip** file
+
 ## Windows system alterations
-* [Custom HOST file](https://github.com/StevenBlack/hosts#readme) - Can be found in: *Windows: %SystemRoot%\system32\drivers\etc\hosts* (due to lag only ~16k entries)
+```
+Edit Power Plan
+```
 * Start > Edit Power Plan > Select High performance > Change plan settings > Change advanced power settings > Processor power management > Maximum processor state: 99%
   * File explorer Address bar: Navigate to Power options > Left side menu: Choose what the power buttons do > Change settings that are currently unavailable > Disable: Turn on fast startup; Enable sleep.
-* View Advanced System Settings > Performance: Settings > Visual Effects > Select: Show windows content while dragging, Smooth edges of screen fonts
-  * Advanced > Automatically manage=DISABLE > Page file size: Initial=1024, Maximum=8192
-* regedit change for auto login functionality ??
-* Automatically hide scroll bars in windows -> Uncheck
+
+```
+View Advanced System Settings
+```
+* Start > View Advanced System Settings > Performance: Settings > Visual Effects > Select:
+	* **Show windows content while dragging**
+	* **Smooth edges of screen fonts**
+  * Advanced > Automatically manage=DISABLE > Page file size: 
+  		* **Initial=1024**, **Maximum=8192**
+
+```
+Automatically hide scroll bars in windows
+```
+* Start > Automatically hide scroll bars in windows -> Uncheck
+
+```
+%SystemRoot%\system32\drivers\etc\
+```
+* [Custom HOST file](https://github.com/StevenBlack/hosts#readme) - Edit **hosts** file found in: *Windows: %SystemRoot%\system32\drivers\etc\hosts*
+(due to lag only ~16k entries)
 
 ### Registry
 Disable windows update in Registry (Set "start"=4)
@@ -67,15 +87,33 @@ Usefull [wiki](http://revertservice.com/10/) website for W10 service documentati
 Run the following commands in Command Prompt (as an administrator):
 
 ```
-sc config XboxGipSvc start= disabled & sc config xboxgip start= disabled & sc config xbgm start=disabled & sc config XblAuthManager start= disabled & sc config XblGameSave start=disabled & sc config workfolderssvc start= disabled & sc config wuauserv start= disabled & sc config WinRM start= disabled & sc config icssvc start= disabled & sc config WMPNetworkSvc start= disabled & sc config wisvc start= disabled & sc config SharedRealitySvc start= disabled & sc config RetailDemo start= disabled & sc config RetailDemo start= disabled & sc config RemoteAccess start= disabled & sc config shpamsvc start= disabled
+sc config XboxGipSvc start= disabled 
+& sc config xboxgip start= disabled 
+& sc config xbgm start=disabled 
+& sc config XblAuthManager start= disabled 
+& sc config XblGameSave start=disabled 
+& sc config workfolderssvc start= disabled 
+& sc config wuauserv start= disabled 
+& sc config WinRM start= disabled 
+& sc config icssvc start= disabled 
+& sc config WMPNetworkSvc start= disabled 
+& sc config wisvc start= disabled 
+& sc config SharedRealitySvc start= disabled 
+& sc config RetailDemo start= disabled 
+& sc config RetailDemo start= disabled 
+& sc config RemoteAccess start= disabled 
+& sc config shpamsvc start= disabled
 ```
 <p>
 
 ```
 sc config WFDSConMgrSvc start= disabled & sc config WFDSConMgrSvc start= disabled
 ```
-   
-   
+
+### Disable Windows Updates
+Run the following file: [Windows update blocker](https://www.sordum.org/9470/windows-update-blocker-v1-7/)
+
+### Services to be disabled
 * [WpcMonSvc] Parental Controls
 * [Fax] Fax - Enables you to send and receive faxes, utilizing fax resources available on this computer or on the network
 * [wisvc] Windows Insider Service - infrastructure support for the Windows Insider Program
@@ -123,18 +161,80 @@ WiFi services:
 * [WFDSConMgrSvc] Wi-Fi Direct Services Connection Manager Service
 
 ### Group policy
-Search > Edit group policy
-(admx GP wiki)[https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.ControlPanel::ForceClassicControlPanel]
-Computer Configuration > Administrative Templates > All Settings:
+[Admx GP wiki](https://admx.help/?Category=Windows_10_2016&Policy=Microsoft.Policies.ControlPanel::ForceClassicControlPanel) - Website with detailed Group Policy documentation
+
+```
+Edit group policy
+```
+Start > Edit group policy > Make the following changes:
+**User Configuration** > Administrative Templates > All Settings:
+* Always open All Control Panel Items when opening Control Panel = ENABLED
+* Windows Automatic Updates = ENABLED
+* Do not search Internet = ENABLED
+* Do not send additional Data = ENABLED
+* Do not keep history of recently opened documents = ENABLED
+
+**Computer Configuration** > Administrative Templates > All Settings:
 * Weather = DISABLED
 * Configure Automatic Updates = DISABLED
 * Allow Automatic Updates immediate installation = DISABLED
+* Allow Automatic Update of Speech Data = DISABLED
+* Allow Cloud Search = DISABLED
+* Allow Clipboard History = DISABLED
 
+**Control Panel**:
+* Allow Online Tips = DISABLED
+
+**Control Panel** > Personalization:
+* Do not display the lock screen = ENABLED
+* Prevent enabling lock screen camera = ENABLED
+* Turn off automatic learning = ENABLED
+* Allow users to enable online speech recognition services = DISABLED
+
+**Microsoft Peer-to-Peer Networking Services**:
+* ? Turn off Microsoft Peer-to-Peer Networking Services = ENABLED ?
+
+**Offline Files**:
+Allow or Disallow use of the Offline Files feature = DISABLED
+
+**IPv6 Transition Technologies** > TCPIP Settings:
+* Set 6to4 State = DISABLED
+
+**Start Menu and Taskbar**:
+* Remove "Recently added" list from Start Menu = ENABLED
+* Remove frequent programs list from Start Menu = ENABLED
+
+System > **Power Management**:
+* Select an active power plan = ENABLED = 2 (High Performance)
+
+System > **Remote Assistance**:
+* Configure Solicited Remote Assistance = DISABLED
+* Configure Offer Remote Assistance = DISABLED
+
+System > **Storage Sense**
+* Allow Storage Sense = DISABLED
+
+System > **OS Policies**:
+* Allow Clipboard History = DISABLED
+* Allow Clipboard synchronization across devices = DISABLED
+* Allow publishing of User Activities = DISABLED
+* Allow upload of User Activities = DISABLED
+* Enables Activity Feed = DISABLED
+
+<d>
 ### Firewall changes
-Run BlockAll.bat as administrator in the /MicrosoftOffice folder to stop it from updating
 
-Search > Windows Defender Firewall > Advanced Settings > 
-Disable firewall rule for:
+Copy **BlockAll.bat** to the following folder:
+
+```
+C:\Program Files\Microsoft Office\
+```
+* Run **BlockAll.bat** as administrator in the **/MicrosoftOffice** folder (to stop it from updating)
+
+```
+Windows Defender Firewall with Advanced Security
+```
+Start > Windows Defender Firewall with Advanced Security > **Disable firewall rule** for the following:
 * Work or shool account
 * Wi-FI Direct network discovery
 * Wi-FI Direct Scan
@@ -149,7 +249,20 @@ Disable the following:
 * Media Features
 
 ## Task Scheduler
-* Task Scheduler > Disable Edge
+
+```
+Task Scheduler
+```
+Start > Task Scheduler > Task Scheduler Library:
+* **OneDrive Standalone Update Task** = DISABLED
+* Disable Edge
+* Microsoft > **XblGameSaveTask** = DISABLED
+* Office > **OfficeTelemetryAgentLogOn** = DISABLED
+* Office > **OfficeTelemetryAgentFallBack** = DISABLED
+* Office > **OfficeFeatureUpdates** = DISABLED
+* Office > **OfficeFeatureUpdatesLogOn** = DISABLED
+* Office > **OfficeAutomaticUpdates** = DISABLED
+* Office > **OfficeClickToRunServiceMonitor** = DISABLED
 
 # Program list
 Abbreviations: 
@@ -204,14 +317,14 @@ Abbreviations:
 
 ## Security / Peer clients
 * [QBitTorrent](https://www.qbittorrent.org/download.php) - a bittorrent client
-* [SimpleDNSCrypt](https://simplednscrypt.org/) - management tool for configuring the dnscrypt-proxy service (introduces latency)
+
 
 ## Programming
 * [Pyhon + pip](https://www.python.org/downloads/windows/) (FOSS) - python with a software management solution
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads) - x86 AMD64/Intel64 full virtualization
 * [NodeJS](https://nodejs.org/en/download/) - a JavaScript runtime built on Chrome's V8 JavaScript engine
 * [XAMPP](https://www.apachefriends.org/download.html) - Apache distribution containing MariaDB, PHP, and Perl
-* [Anaconda3](https://www.anaconda.com/products/individual) - package / environment manager,  Python3 distribution with 1,500+ open source packages
+* [Anaconda3](https://www.anaconda.com/products/distribution#Downloads) - package / environment manager,  Python3 distribution with 1,500+ open source packages
 * [IntelliJ Idea](https://www.jetbrains.com/idea/) - for Java, with assistance for a variety of other languages such as SQL, JPQL, HTML, JavaScript
 * [WebStorm](https://www.jetbrains.com/webstorm/) - for JavaScript and related technologies
 * [Visual Studio Code](https://github.com/VSCodium/vscodium/releases/latest) (FOSS) - JavaScript, TypeScript, Node.js (C++, C#, Java, Python, PHP, Go, .NET, Unity)
@@ -417,8 +530,7 @@ Start Menu > Services > Windows Update > Disable the following:
 * [Greenshot](https://getgreenshot.org/downloads) (FOSS) - screenshot tool
 
 ### Optional
-* [Handbrake](https://handbrake.fr/downloads.php) (FOSS) - video transcoder
-  * [Ruby - chocolatey](https://community.chocolatey.org/packages/ruby) 
+* [Ruby - chocolatey](https://community.chocolatey.org/packages/ruby) 
   * ```
     choco install ruby
     ```
