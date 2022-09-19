@@ -47,7 +47,7 @@ Start > PowerShell > Run the following [script](https://github.com/Sycnex/Window
 ```
 iwr -useb https://git.io/debloat|iex
 ```
-Disable Telemetry, OneDrive, remove bloatware regkeys
+Disable Telemetry, OneDrive, remove bloatware regkeys, Stop Edge PDF
 ```
 Edit Power Plan
 ```
