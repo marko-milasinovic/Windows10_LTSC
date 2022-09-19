@@ -42,6 +42,12 @@ net user administrator /active:yes
 3) **Unzip** the provided **SystemFolders.7zip** file
 
 ## Windows system alterations
+Start > PowerShell > Run the following [script](https://github.com/Sycnex/Windows10Debloater) as administrator:
+
+```
+iwr -useb https://git.io/debloat|iex
+```
+
 ```
 Edit Power Plan
 ```
