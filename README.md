@@ -10,8 +10,8 @@
 
 # Requirements
 1) Windows 10 Enterprise LTSC image
-2) USB drive with at least 8GiB, final image file size on flash drive is ~4.8 GiB.
-3) Host PC machine with at least 4GB of RAM for normal operation
+2) USB drive with at least 8 GiB, final image file size on flash drive is ~4.8 GiB.
+3) Host PC machine with at least 4 GiB of RAM for normal operation
 
 ### Table of Contents
  * [Windows system alterations](#windows-system-alterations)
