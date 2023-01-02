@@ -318,6 +318,7 @@ choco install mpv
 * [Revo Uninstaller](https://www.revouninstaller.com/start-freeware-download/) (Shareware) - advanced program uninstaller
 * [7-zip with Zstandard](https://github.com/mcmilk/7-Zip-zstd/releases/latest) - file archiver with additional functions (eg. hash verification)
 * [VLC](https://www.videolan.org/vlc/download-windows.html) (FOSS) - multimedia player and framework
+  * You can config caching on Tools -> preferences (show settings "All") -> Input / Codecs. In Advanced option, define your preferences for caching.
 * [Adobe Reader](https://get.adobe.com/reader/download?os=Windows+10&name=Reader+DC+2022.002.20191+English+Windows%2864Bit%29&lang=en&nativeOs=Windows+10&accepted=&declined=mss%2Cmsc%2Ccr&preInstalled=&site=otherversions) (Freeware) - Propriatery pdf reader
  * After installing disable the following: Start > Services > **Adobe Acrobat Update Service** = DISABLED
 
