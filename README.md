@@ -477,18 +477,18 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer
 # Project milestones
 A list of changes to be implemented on a freshly installed windows system:
 
-:heavy_check_mark: Automated;
+:heavy_check_mark: Automated with PS / BAT scripts;
 	
 :heavy_minus_sign: Manually done (Difficult to automate across different windows versions);
 	
 :o: TODO
 	
-|Configuration|Manual configs|Automatic configs|x|y|z|
-|:---:|:---:|:---:|:---:|:---:|:---:|
-| Default Programs |:heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :o: |
-| Optional programs | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :o: |
-| Windows functional changes | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :o: |
-| Windows UI/UX changes | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark:| :heavy_check_mark: |
-| GP changes |:heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark:| :o: |
-| Service changes | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark:| :o: |
-| Firewall changes | :heavy_check_mark: | :heavy_check_mark: | :heavy_minus_sign: | :heavy_check_mark:| :o: |
+|Configuration|Manual configs|Automatic configs|Wiki|
+|:---:|:---:|:---:|:---:|
+| Program install |:heavy_check_mark: | :heavy_check_mark: | :o: |
+| Optional programs | :heavy_check_mark: | :heavy_check_mark: | :o: |
+| Windows functional changes | :heavy_check_mark: | :heavy_check_mark: | :o: |
+| Windows UI/UX changes | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
+| GP changes |:heavy_check_mark: | :heavy_check_mark: | :o: |
+| Service changes | :heavy_check_mark: | :heavy_check_mark: | :o: |
+| Firewall changes | :heavy_check_mark: | :heavy_check_mark: | :o: |
