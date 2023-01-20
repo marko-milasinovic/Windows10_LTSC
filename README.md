@@ -488,7 +488,8 @@ A list of changes to be implemented on a freshly installed windows system:
 | Program install |:heavy_check_mark: | :heavy_check_mark: | :o: |
 | Optional programs | :heavy_check_mark: | :heavy_check_mark: | :o: |
 | Windows functional changes | :heavy_check_mark: | :heavy_check_mark: | :o: |
+| Windows privacy changes | :heavy_minus_sign: | :heavy_check_mark: | :o: |
 | Windows UI/UX changes | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| GP changes |:heavy_check_mark: | :heavy_check_mark: | :o: |
+| GP changes |:heavy_minus_sign: | :heavy_check_mark: | :o: |
 | Service changes | :heavy_check_mark: | :heavy_check_mark: | :o: |
 | Firewall changes | :heavy_check_mark: | :heavy_check_mark: | :o: |
