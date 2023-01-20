@@ -475,6 +475,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer
 
 
 # Project status
+|Configuration|Manual configs|Automatic configs|x|y|z|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | Default Programs |:heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :o: |
 | Optional programs | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark:| :o: |
