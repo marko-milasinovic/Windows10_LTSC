@@ -477,9 +477,9 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\MyComputer
 # Project milestones
 A list of changes to be implemented on a freshly installed windows system:
 
-:heavy_check_mark: automated;
+:heavy_check_mark: Automated;
 	
-:heavy_minus_sign: difficult to automate across windows versions;
+:heavy_minus_sign: Manually done (Difficult to automate across different windows versions);
 	
 :o: TODO
 	
