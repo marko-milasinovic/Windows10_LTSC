@@ -483,7 +483,7 @@ A list of changes to be implemented on a freshly installed windows system:
 	
 :o: TODO
 	
-|Configuration|Manual configs|Automatic configs|Wiki|
+|Configuration|Automatic configs|Manual configs|Wiki|
 |:---:|:---:|:---:|:---:|
 | Program install |:heavy_check_mark: | :heavy_check_mark: | :o: |
 | Optional programs | :heavy_check_mark: | :heavy_check_mark: | :o: |
